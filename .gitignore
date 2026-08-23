@@ -1,0 +1,15 @@
+# Lecture decks are omitted for now — 61 MB of .pptx.
+# The Course Schedule's download chips will 404 until these are committed
+# (drop this rule) or hosted elsewhere and the links repointed.
+assets/slides/
+
+# Original, unprocessed logo artwork (the derived PNGs in assets/ are committed)
+assets/source/
+
+# Reference material, not part of the published site
+*.pdf
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp

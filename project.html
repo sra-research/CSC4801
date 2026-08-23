@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Course Project · CSC4801</title>
+<meta name="description" content="The CSC4801 team capstone — build a full-stack candidate-matching platform to a fixed specification, audit another team's build, and defend it live." />
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__mark" src="assets/school-logo.png" alt="School of Data Science" width="621" height="291" />
+      <span><b>CSC4801</b><br><small>AI-assisted Software Engineering</small></span>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">≡</button>
+    <nav class="nav__links">
+      <a href="index.html">Overview</a>
+      <a href="index.html#staff">Staff</a>
+      <a href="index.html#schedule">Schedule</a>
+      <a href="index.html#grading">Grading</a>
+      <a href="assignments.html">Assignments</a>
+      <a href="project.html" class="active">Project</a>
+    </nav>
+  </div>
+</header>
+
+<section class="phead">
+  <div class="wrap">
+    <span class="tag">Team capstone · 60% of grade</span>
+    <h1>Course Project</h1>
+    <p>The capstone is a candidate-matching platform. In teams of three, build a working full-stack web app to a fixed specification — candidates and employers, authentication, a deterministic match score, and interview scheduling with no double-booking. Then go public, audit another team's build for the vulnerabilities you were taught to find, and defend your system in a live demo.</p>
+  </div>
+</section>
+
+<!-- ===================== BRIEF ===================== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="grid grid--3">
+      <article class="card reveal">
+        <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+        <h3>Spec-first, agent-built</h3>
+        <p>You are given the requirements. Turn them into a <code style="font-family:var(--f-mono);font-size:.8rem">SPEC.md</code>, then drive coding agents to implement it — while you stay accountable for every line that ships.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Adversarial peer audit</h3>
+        <p>At feature freeze you go public. Another team clones your repo from a clean checkout and hunts for SQL injection, XSS, and broken booking concurrency.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M4 4h16v9a4 4 0 01-4 4H8a4 4 0 01-4-4z"/></svg></div>
+        <h3>Defend it live</h3>
+        <p>Demo the running system, walk your architecture, and answer for the audit findings against you. Working software and a clear defense both count.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REQUIREMENTS ===================== -->
+<section class="section section--alt" id="requirements">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <span class="tag">Specification · FP-*</span>
+      <h2>Project Requirements</h2>
+      <p>What the product must do. Every requirement carries a stable ID so tests and the peer audit can trace back to it. This is the graded contract — the full <code style="font-family:var(--f-mono);font-size:.85rem">REQUIREMENTS.md</code> in the starter repo is authoritative.</p>
+    </div>
+
+    <div class="reveal" style="overflow-x:auto">
+      <table class="req">
+        <thead>
+          <tr><th style="width:130px">Area</th><th style="width:120px">IDs</th><th>Requirement</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Architecture</td><td><code>FP-ARCH-1</code></td><td>A full-stack web app with a persistent database, runnable from a clean checkout with documented install steps.</td></tr>
+          <tr><td>Auth</td><td><code>FP-AUTH-1/2/3</code></td><td>Register, log in, and log out; passwords stored only as salted hashes; sessions scoped to the two roles — candidate and employer.</td></tr>
+          <tr><td>Candidate</td><td><code>FP-CAN-1/2/3</code></td><td>Candidates create and edit a profile, list their skills, and browse open positions.</td></tr>
+          <tr><td>Employer</td><td><code>FP-EMP-1/2/3</code></td><td>Employers post and edit job openings with required skills, and view matched candidates for a role.</td></tr>
+          <tr><td>Matching</td><td><code>FP-MATCH-1/2</code></td><td>A deterministic match score from the overlap of candidate skills and role requirements — same inputs, same score, every time.</td></tr>
+          <tr><td>Scheduling</td><td><code>FP-SCHED-1/2/3</code></td><td>Book, view, and cancel interview slots; a slot can never be double-booked, even under concurrent requests.</td></tr>
+          <tr><td>Security</td><td><code>FP-SEC-1/2/3/4</code></td><td>Defend against SQL injection and XSS, enforce authorization on every route, and keep secrets out of the repo.</td></tr>
+          <tr><td>Process</td><td><code>FP-PROC-1/2</code></td><td>Continuous integration runs the full test suite from a clean checkout; work is tagged at feature freeze.</td></tr>
+          <tr><td>Docs</td><td><code>FP-DOC-1/2/3</code></td><td>Ship <code>SPEC.md</code>, <code>INSTALL.md</code>, <code>README.md</code>, and an <code>AI_USAGE.md</code> recording how AI was used.</td></tr>
+          <tr><td>Testing</td><td><code>FP-TEST-1</code></td><td>Automated tests covering the requirements — including atomic booking and the security defenses above.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- the signature: the match-score contract as code -->
+    <div class="reveal" style="margin-top:34px">
+      <p class="tag" style="margin-bottom:14px">FP-MATCH · the scoring contract</p>
+      <div class="well">
+<span class="c"># Deterministic. No LLM, no randomness — the audit will pin this exactly.</span>
+<span class="k">def</span> match_score(candidate_skills, role_requirements):
+    C, R = <span class="k">set</span>(candidate_skills), <span class="k">set</span>(role_requirements)
+    <span class="k">if</span> <span class="k">not</span> R:
+        <span class="k">return</span> <span class="n">100</span>              <span class="c"># a role with no requirements matches everyone</span>
+    <span class="k">return</span> <span class="n">100</span> * <span class="k">len</span>(C &amp; R) // <span class="k">len</span>(R)
+
+<span class="c"># {Python, SQL} vs {Python, SQL} -> </span><span class="s">100</span>
+<span class="c"># {Python}      vs {Python, SQL} -> </span><span class="s">50</span>
+<span class="c"># {Rust}        vs {Python, SQL} -> </span><span class="s">0</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TIMELINE ===================== -->
+<section class="section" id="review">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <span class="tag">Milestones</span>
+      <h2>Project Milestones</h2>
+      <p>Build, freeze, audit, defend. The capstone runs through the back half of the term. Dates track the course calendar; the official course site is authoritative if they differ.</p>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="tl">
+        <div class="wk">Weeks 6–11 · Build</div>
+        <h4>Spec &amp; implementation</h4>
+        <p>Form teams of three, write <code style="font-family:var(--f-mono);font-size:.8rem">SPEC.md</code> from the requirements, stand up CI early, and build feature by feature with agents in the loop. Keep <code style="font-family:var(--f-mono);font-size:.8rem">AI_USAGE.md</code> current as you go.</p>
+      </div>
+      <div class="tl">
+        <div class="wk">Week 11 · Feature freeze</div>
+        <h4>Green CI, tag <code style="font-family:var(--f-mono);font-size:.82rem">v1.0-audit</code></h4>
+        <p>All requirement-level tests pass from a clean checkout. Push the freeze tag — this is the exact commit another team will audit. No new features after the tag.</p>
+      </div>
+      <div class="tl">
+        <div class="wk">Week 12 · Competition</div>
+        <h4>Go public &amp; audit a peer</h4>
+        <p>Repositories go public. You clone your assigned team's tagged commit, attempt SQL-injection / XSS / double-booking exploits, and file a written audit that cites the <code style="font-family:var(--f-mono);font-size:.8rem">FP-*</code> IDs at issue. Confirm findings against you and repair.</p>
+      </div>
+      <div class="tl">
+        <div class="wk">Weeks 13–14 · Presentations</div>
+        <h4>Demo &amp; defense</h4>
+        <p>Demo the running system live, walk the architecture and your AI-usage story, and respond to the audit findings — what was real, what was fixed, what you dispute.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GRADING ===================== -->
+<section class="section section--alt" id="grading">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <span class="tag">Capstone rubric · 100 pts</span>
+      <h2>Project Grading</h2>
+      <p>How the capstone is scored. The project's internal 100 points split three ways. Working, spec-compliant software carries the most weight, but a rigorous audit of another team and a strong live defense are graded in their own right.</p>
+    </div>
+
+    <div class="grade__bars reveal">
+      <div class="gbar">
+        <div class="gbar__top"><span class="gbar__name">Requirements fulfillment <small>spec-compliant, tested, green CI</small></span><span class="gbar__pct">40</span></div>
+        <div class="gbar__track"><div class="gbar__fill" data-pct="40"></div></div>
+      </div>
+      <div class="gbar" id="present">
+        <div class="gbar__top"><span class="gbar__name">Peer review <small>quality of the audit you perform + how your build holds up</small></span><span class="gbar__pct">40</span></div>
+        <div class="gbar__track"><div class="gbar__fill" data-pct="40"></div></div>
+      </div>
+      <div class="gbar">
+        <div class="gbar__top"><span class="gbar__name">Presentation <small>live demo + architecture &amp; audit defense</small></span><span class="gbar__pct">20</span></div>
+        <div class="gbar__track"><div class="gbar__fill" data-pct="20"></div></div>
+      </div>
+    </div>
+
+    <div class="callout reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+      <p><b>Non-negotiables.</b> No real secrets in the repository — commit an <code style="font-family:var(--f-mono);font-size:.8rem">.env.example</code> with placeholders only. The suite must include an atomic-booking concurrency test and explicit SQL-injection and XSS tests, and everything must pass in CI from a clean checkout. A build that only runs on your laptop does not count.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <a class="brand" href="index.html"><img class="brand__mark" src="assets/school-logo.png" alt="School of Data Science" width="621" height="291" /><span><b>CSC4801</b><br><small>AI-assisted Software Engineering</small></span></a>
+      <p style="margin-top:16px">AI-assisted Software Engineering — building, specifying, and securing software with coding agents.</p>
+      <p class="footer__mono">© <span data-year>2026</span> CSC4801 · Course website</p>
+    </div>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="index.html#staff">Staff</a>
+      <a href="index.html#schedule">Schedule</a>
+      <a href="index.html#grading">Grading</a>
+      <a href="assignments.html">Assignments</a>
+      <a href="project.html">Project</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
