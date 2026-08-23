@@ -296,14 +296,42 @@ code { color: #0A3069; }
 }
 
 /* ===================================================== ACKNOWLEDGEMENT = */
-/* Set off from the leaderboard by a rule rather than a card — it is a credit,
-   not a data panel, so it stays quiet. */
-.ack { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); }
-.ack h2 {
-  font-family: var(--f-mono); font-size: .72rem; font-weight: 500;
-  text-transform: uppercase; letter-spacing: .07em; color: var(--ink-faint);
+/* Sponsor credit: compact enough to stay secondary to the leaderboard, but
+   structured as a distinct widget rather than a line of footer copy. */
+.ack {
+  margin-top: 44px; padding: 18px 20px;
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center; gap: 18px;
+  background: var(--canvas-sub); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow);
 }
-.ack p { margin-top: 10px; font-size: .95rem; color: var(--ink-soft); max-width: 68ch; }
+.ack__mark {
+  width: 64px; height: 64px; display: grid; place-items: center;
+  flex: none; border-radius: var(--radius);
+  background: var(--ink); color: var(--canvas);
+  font-family: var(--f-display); font-size: 1rem; font-weight: 700;
+  letter-spacing: -.04em;
+}
+.ack__label {
+  font-family: var(--f-mono); font-size: .67rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--ink-faint);
+}
+.ack__body > p:last-child { margin-top: 4px; color: var(--ink-soft); font-size: .92rem; }
+.ack__body strong { color: var(--ink); font-weight: 600; }
+.ack__link {
+  white-space: nowrap; padding: 7px 11px;
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  color: var(--ink); background: var(--canvas);
+  font-family: var(--f-mono); font-size: .72rem; font-weight: 500;
+  transition: border-color .15s, background .15s;
+}
+.ack__link:hover { border-color: var(--ink); background: var(--surface); text-decoration: none; }
+
+@media (max-width: 620px) {
+  .ack { grid-template-columns: auto minmax(0, 1fr); gap: 14px; }
+  .ack__mark { width: 54px; height: 54px; }
+  .ack__link { grid-column: 1 / -1; text-align: center; }
+}
 
 /* ============================================================ PEOPLE === */
 .people { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 16px; }
