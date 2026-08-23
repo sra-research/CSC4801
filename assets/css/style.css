@@ -295,6 +295,16 @@ code { color: #0A3069; }
   font-style: normal;
 }
 
+/* ===================================================== ACKNOWLEDGEMENT = */
+/* Set off from the leaderboard by a rule rather than a card — it is a credit,
+   not a data panel, so it stays quiet. */
+.ack { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); }
+.ack h2 {
+  font-family: var(--f-mono); font-size: .72rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .07em; color: var(--ink-faint);
+}
+.ack p { margin-top: 10px; font-size: .95rem; color: var(--ink-soft); max-width: 68ch; }
+
 /* ============================================================ PEOPLE === */
 .people { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 16px; }
 .person {
