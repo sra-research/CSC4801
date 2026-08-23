@@ -1,5 +1,5 @@
-/* CSC4801 — shared behavior: nav, scroll reveal, grade bars,
-   agent-loop cycling, and deterministic grayscale SVG avatars. */
+/* CSC4801 — shared behavior: mobile nav, scroll reveal,
+   deterministic grayscale SVG avatars, and the footer year stamp. */
 (function () {
   "use strict";
 
@@ -26,33 +26,6 @@
     revealables.forEach(function (el) { io.observe(el); });
   } else {
     revealables.forEach(function (el) { el.classList.add("in"); });
-  }
-
-  /* ---- grade bars fill when visible ---- */
-  var bars = document.querySelectorAll(".gbar__fill");
-  if (bars.length && "IntersectionObserver" in window) {
-    var bo = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.style.width = e.target.getAttribute("data-pct") + "%";
-          bo.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    bars.forEach(function (b) { bo.observe(b); });
-  }
-
-  /* ---- agent loop: cycle the active step ---- */
-  var steps = document.querySelectorAll(".loop__step");
-  if (steps.length && !reduce) {
-    var i = 0;
-    setInterval(function () {
-      steps.forEach(function (s) { s.classList.remove("on"); });
-      steps[i % steps.length].classList.add("on");
-      i++;
-    }, 1400);
-  } else if (steps.length) {
-    steps[0].classList.add("on");
   }
 
   /* ---- deterministic grayscale avatars ----

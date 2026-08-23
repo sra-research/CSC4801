@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>CSC4801 · AI-assisted Software Engineering</title>
-<meta name="description" content="CSC4801 — AI-assisted Software Engineering. Build coding agents, work spec-first, and ship a full-stack product with AI as a primary tool. Course overview, schedule, readings, slides, grading, and staff." />
+<meta name="description" content="CSC4801 — AI-assisted Software Engineering. Build coding agents, work spec-first, and ship a full-stack product with AI as a primary tool. Course introduction, staff, schedule, readings, and lecture slides." />
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
 <header class="nav">
   <div class="nav__inner">
     <a class="brand" href="index.html">
-      <img class="brand__mark" src="assets/school-logo.png" alt="School of Data Science" width="621" height="291" />
+      <img class="brand__mark" src="assets/uni-logo.png" alt="The Chinese University of Hong Kong" width="96" height="76" />
       <span><b>CSC4801</b><br><small>AI-assisted Software Engineering</small></span>
     </a>
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">≡</button>
@@ -26,8 +26,6 @@
       <a href="index.html" class="active">Overview</a>
       <a href="index.html#staff">Staff</a>
       <a href="index.html#schedule">Schedule</a>
-      <a href="index.html#grading">Grading</a>
-      <a href="assignments.html">Assignments</a>
       <a href="project.html">Project</a>
     </nav>
   </div>
@@ -35,47 +33,23 @@
 
 <!-- ===================== COURSE OVERVIEW ===================== -->
 <section class="section ov" id="overview">
-  <div class="wrap ov__grid">
-    <!-- title spans both columns, so the loop panel lines up with the lede below it -->
-    <header class="ov__head">
-      <span class="tag">CSC4801 · Upper-division seminar</span>
-      <h1 class="ov__title">Course Overview</h1>
-    </header>
+  <div class="wrap">
+    <h1 class="ov__title">CSC4801 <span>AI-assisted Software Engineering</span></h1>
 
-    <div>
-      <p class="ov__lede">AI-assisted Software Engineering is a hands-on course on building software with coding agents. It moves through three stages: first the <b>basis</b> — how AI and large language models work, and how they support software engineering; then the <b>techniques</b> — the basic methods of applying AI across the engineering lifecycle; and finally the <b>application</b> — a real-world team project where you practice using AI to build, test, and secure a working product.</p>
+    <p class="ov__lede">A hands-on course on building software with coding agents. It moves through three stages: first the <b>basis</b> — how AI and large language models work, and how they support software engineering; then the <b>techniques</b> — the basic methods of applying AI across the engineering lifecycle; and finally the <b>application</b> — a real-world team project where you practice using AI to build, test, and secure a working product.</p>
 
-      <dl class="facts">
-        <div><dt>Term</dt><dd>Fall 2026 · 14 weeks<br><small style="color:var(--ink-soft);font-weight:400">Sep 8 – Dec 10</small></dd></div>
-        <div><dt>Time</dt><dd>Tue &amp; Thu · 8:30–10:00</dd></div>
-        <div><dt>Location</dt><dd>TBD<span class="tpl">tbd</span></dd></div>
-        <div><dt>Format</dt><dd>Lectures &amp; labs · 3 homeworks · team capstone</dd></div>
-      </dl>
+    <dl class="facts">
+      <div><dt>Term</dt><dd>Fall 2026 · 14 weeks<br><small style="color:var(--ink-soft);font-weight:400">Sep 8 – Dec 10</small></dd></div>
+      <div><dt>Time</dt><dd>Tue &amp; Thu · 8:30–10:00</dd></div>
+      <div><dt>Location</dt><dd>TBD<span class="tpl">tbd</span></dd></div>
+      <div><dt>Format</dt><dd>Lectures &amp; labs · team project</dd></div>
+    </dl>
 
-      <div class="hero__jump">
-        <span>Jump to</span>
-        <a href="#staff">Staff</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#grading">Grading</a>
-      </div>
-    </div>
-
-    <!-- signature: the agent loop -->
-    <div class="loop" aria-hidden="true">
-      <div class="loop__bar">
-        <span>agent.run()</span>
-        <span class="loop__dots"><i></i><i></i><i></i></span>
-      </div>
-      <div class="loop__step on"><span class="n">3</span><span class="st">prepare_context</span><span class="tk">+1.2k tok</span></div>
-      <div class="loop__link">│</div>
-      <div class="loop__step"><span class="n">4</span><span class="st">call_llm</span><span class="tk">stream</span></div>
-      <div class="loop__link">│</div>
-      <div class="loop__step"><span class="n">5</span><span class="st">process_response</span><span class="tk">parse</span></div>
-      <div class="loop__link">│</div>
-      <div class="loop__step"><span class="n">6</span><span class="st">call_tools</span><span class="tk">MCP · Skills</span></div>
-      <div class="loop__link">│</div>
-      <div class="loop__step"><span class="n">7</span><span class="st">receive_results</span><span class="tk">obs</span></div>
-      <div class="loop__link">╰─ loop until done ─╯</div>
+    <div class="hero__jump">
+      <span>Jump to</span>
+      <a href="#staff">Staff</a>
+      <a href="#schedule">Schedule</a>
+      <a href="project.html">Project</a>
     </div>
   </div>
 </section>
@@ -118,435 +92,70 @@
   </div>
 </section>
 
-<!-- ===================== COURSE GOALS ===================== -->
-<section class="section" id="goals">
-  <div class="wrap">
-    <div class="section__head reveal">
-      <span class="tag">Goals</span>
-      <h2>Course Goals</h2>
-      <p>The term is built in three stages. Each one depends on the one before it: you cannot apply what you have not practiced, and you cannot practice what you do not understand.</p>
-    </div>
-    <div class="goals reveal">
-      <article class="goal goal--1">
-        <h3><span class="goal__n">1.</span> Basis</h3>
-        <p>Learn how AI/LLM work and how they support software engineering</p>
-      </article>
-      <article class="goal goal--2">
-        <h3><span class="goal__n">2.</span> Techniques</h3>
-        <p>Learn the basic methods of using AI in software engineering</p>
-      </article>
-      <article class="goal goal--3">
-        <h3><span class="goal__n">3.</span> Application</h3>
-        <p>Do a real-world project to practice the usage of AI in software engineering</p>
-      </article>
-    </div>
-  </div>
-</section>
 
 <!-- ===================== SCHEDULE (CALENDAR) ===================== -->
-<section class="section section--alt" id="schedule">
+<section class="section" id="schedule">
   <div class="wrap">
     <div class="section__head reveal">
       <span class="tag">Calendar · Fall 2026</span>
       <h2>Course Schedule</h2>
-      <p>Fourteen weeks, meeting Tuesdays and Thursdays. Eleven teaching weeks move from language models to agents, prompting, requirements, coding practice, and teamwork, then the hard parts — testing, security, repair, and operations — closing with guest speakers. The last three weeks are the project competition and demonstrations. Each session links its lecture slides (<code style="font-family:var(--f-mono);font-size:.85rem">.pptx</code>) alongside the assigned readings.</p>
+      <p>Fourteen weeks, meeting Tuesdays and Thursdays. Slides are posted after each class.</p>
     </div>
 
-    <div class="cal reveal">
-
-      <div class="cal__month"><span>September 2026</span><span>Weeks 01–04</span></div>
-
-      <div class="cal__week">
-        <div class="cal__wk">Week 01</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">08</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Introduction</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/00_Introduction.pptx" download>&darr; Introduction</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">10</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Principles of LLMs</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/01_LLMs.pptx" download>&darr; LLMs</a>
-              <a class="chip" href="https://www.youtube.com/watch?v=7xTGNNLPyMI">Deep Dive: LLMs</a>
-              <a class="chip" href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>
-              <a class="chip" href="https://ollama.com/">Ollama</a>
-              <a class="chip" href="https://huggingface.co/">Hugging Face</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__week">
-        <div class="cal__wk">Week 02</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">15</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Principles of Agents</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/02_Principles_of_Agents.pptx" download>&darr; Principles of Agents</a>
-              <a class="chip" href="https://react-lm.github.io/">ReAct</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">17</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Advanced Agents</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/03_Advanced_Agents.pptx" download>&darr; Advanced Agents</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__week">
-        <div class="cal__wk">Week 03</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">22</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Prompt &amp; Reason</h3>
-            <div class="cal__links">
-              <a class="chip" href="https://www.promptingguide.ai">Prompting Guide</a>
-              <a class="chip" href="https://www.youtube.com/watch?v=T9aRN5JkmL8">Prompt Engineering</a>
-              <a class="chip" href="https://www.youtube.com/watch?v=kCc8FmEb1nY">Build GPT</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">24</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lab">Exercise</span>
-            <h3>Agent Implementation</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/04_MCP_Skills.pptx" download>&darr; MCP &amp; Skills</a>
-              <a class="chip chip--deck" href="assets/slides/05_Agents_Exercise.pptx" download>&darr; Agents Exercise</a>
-              <a class="chip" href="https://modelcontextprotocol.io">MCP</a>
-              <a class="chip" href="https://www.anthropic.com/engineering/writing-tools-for-agents">Writing Tools</a>
-              <a class="chip" href="https://agentskills.io/home">Agent Skills</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__week">
-        <div class="cal__wk">Week 04</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">29</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Requirements</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/06_Requirements.pptx" download>&darr; Requirements</a>
-              <a class="chip" href="https://blog.ravi-mehta.com/p/specs-are-the-new-source-code">Long-lived Spec</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">01</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lab">Exercise</span>
-            <h3>Specification Driven Development</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/07_Requirements_Exercise.pptx" download>&darr; Requirements Exercise</a>
-              <a class="chip" href="https://github.github.com/spec-kit/">Spec Kit</a>
-              <a class="chip" href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">Understanding SDD</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__month"><span>October 2026</span><span>Weeks 05–08</span></div>
-
-      <div class="cal__week">
-        <div class="cal__wk">Week 05</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">06</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Coding I</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/08_Coding_I.pptx" download>&darr; Coding I</a>
-              <a class="chip" href="https://livecodebench.github.io/">LiveCodeBench</a>
-              <a class="chip" href="https://evalplus.github.io/leaderboard.html">EvalPlus</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">08</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Coding II</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/09_Coding_II.pptx" download>&darr; Coding II</a>
-              <a class="chip" href="https://debugml.github.io/cheating-agents/">Cheating Agents</a>
-              <a class="chip" href="https://www.anthropic.com/engineering/building-c-compiler">Parallel Claudes</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__week">
-        <div class="cal__wk">Week 06</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">13</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Team Collaboration</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/10_Team.pptx" download>&darr; Working as a Team</a>
-              <a class="chip" href="https://code.claude.com/docs/en/worktrees">Claude Worktrees</a>
-              <a class="chip" href="https://developers.openai.com/codex/app/worktrees">Codex Worktrees</a>
-              <a class="chip" href="https://www.youtube.com/watch?v=TswQeKftnaw">AI Code Reviews</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">15</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lab">Exercise</span>
-            <h3>Coding</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/11_Coding_Exercise.pptx" download>&darr; Coding Exercise</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__week">
-        <div class="cal__wk">Week 07</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">20</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Testing &amp; Verification</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/12_Validation.pptx" download>&darr; Validation</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">22</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lab">Exercise</span>
-            <h3>Fuzzing</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/14_Testing_Exercise.pptx" download>&darr; Testing Exercise</a>
-              <a class="chip" href="https://fuzzingbrain.github.io/">Fuzzing Brain</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__week">
-        <div class="cal__wk">Week 08</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">27</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Security</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/13_Security.pptx" download>&darr; Security</a>
-              <a class="chip" href="https://genai.owasp.org/llm-top-10/">OWASP LLM Top-10</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">29</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lab">Exercise</span>
-            <h3>Prompt Injection</h3>
-            <div class="cal__links">
-              <a class="chip" href="https://semgrep.dev/blog/2025/finding-vulnerabilities-in-modern-web-apps-using-claude-code-and-openai-codex/">Finding Vulns</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__month"><span>November 2026</span><span>Weeks 09–12</span></div>
-
-      <div class="cal__week">
-        <div class="cal__wk">Week 09</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">03</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>Repair</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/15_Repair.pptx" download>&darr; Program Repair</a>
-              <a class="chip" href="https://www.swebench.com/">SWE-bench</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">05</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--guest">Guest Speaker</span>
-            <h3>Guest Speaker</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__week">
-        <div class="cal__wk">Week 10</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">10</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--lec">Lecture</span>
-            <h3>AIOps</h3>
-            <div class="cal__links">
-              <a class="chip chip--deck" href="assets/slides/16_AIOps.pptx" download>&darr; AIOps</a>
-              <a class="chip" href="https://github.com/resources/articles/what-is-aiops">What is AIOps</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">12</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--guest">Guest Speaker</span>
-            <h3>Guest Speaker</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__week">
-        <div class="cal__wk">Week 11</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">17</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--guest">Guest Speaker</span>
-            <h3>Guest Speaker</h3>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">19</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--guest">Guest Speaker</span>
-            <h3>Guest Speaker</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__week is-milestone">
-        <div class="cal__wk">Week 12</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">24</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--ms">Project</span>
-            <h3>Project Competition</h3>
-            <div class="cal__links">
-              <a class="chip" href="project.html">Project brief &rarr;</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">26</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--ms">Project</span>
-            <h3>Project Competition</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__month"><span>December 2026</span><span>Weeks 13–14</span></div>
-
-      <div class="cal__week is-milestone">
-        <div class="cal__wk">Week 13</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">01</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--ms">Project</span>
-            <h3>Project Presentation and Demonstration</h3>
-            <div class="cal__links">
-              <a class="chip" href="project.html#present">Rubric &rarr;</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">03</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--ms">Project</span>
-            <h3>Project Presentation and Demonstration</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="cal__week is-milestone">
-        <div class="cal__wk">Week 14</div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Tue</span><span class="dnum">08</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--ms">Project</span>
-            <h3>Project Presentation and Demonstration</h3>
-            <div class="cal__links">
-              <a class="chip" href="project.html#present">Rubric &rarr;</a>
-            </div>
-          </div>
-        </div>
-        <div class="cal__day">
-          <div class="cal__date"><span class="dow">Thu</span><span class="dnum">10</span></div>
-          <div class="cal__body">
-            <span class="cal__kind cal__kind--ms">Project</span>
-            <h3>Project Presentation and Demonstration</h3>
-          </div>
-        </div>
-      </div>
-
+    <div class="reveal" style="overflow-x:auto">
+      <table class="sched">
+        <thead>
+          <tr><th>Wk</th><th>Date</th><th>Topic</th><th>Slides</th><th>Readings</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sched__wk" rowspan="2">01</td><td class="sched__date">Tue Sep 08</td><td class="sched__topic">Introduction<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+          <tr><td class="sched__date">Thu Sep 10</td><td class="sched__topic">Principles of LLMs<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://www.youtube.com/watch?v=7xTGNNLPyMI">Deep Dive: LLMs</a> · <a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a> · <a href="https://ollama.com/">Ollama</a></td></tr>
+          <tr><td class="sched__wk" rowspan="2">02</td><td class="sched__date">Tue Sep 15</td><td class="sched__topic">Principles of Agents<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://react-lm.github.io/">ReAct</a></td></tr>
+          <tr><td class="sched__date">Thu Sep 17</td><td class="sched__topic">Advanced Agents<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://www.anthropic.com/engineering/writing-tools-for-agents">Writing Tools</a></td></tr>
+          <tr><td class="sched__wk" rowspan="2">03</td><td class="sched__date">Tue Sep 22</td><td class="sched__topic">Prompt &amp; Reason<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://www.promptingguide.ai">Prompting Guide</a> · <a href="https://www.youtube.com/watch?v=T9aRN5JkmL8">Prompt Engineering</a></td></tr>
+          <tr><td class="sched__date">Thu Sep 24</td><td class="sched__topic">Agent Implementation<span class="sched__kind sched__kind--lab">Exercise</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://modelcontextprotocol.io">MCP</a> · <a href="https://agentskills.io/home">Agent Skills</a></td></tr>
+          <tr><td class="sched__wk" rowspan="2">04</td><td class="sched__date">Tue Sep 29</td><td class="sched__topic">Requirements<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://blog.ravi-mehta.com/p/specs-are-the-new-source-code">Long-lived Spec</a></td></tr>
+          <tr><td class="sched__date">Thu Oct 01</td><td class="sched__topic">Specification Driven Development<span class="sched__kind sched__kind--lab">Exercise</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://github.github.com/spec-kit/">Spec Kit</a> · <a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">Understanding SDD</a></td></tr>
+          <tr><td class="sched__wk" rowspan="2">05</td><td class="sched__date">Tue Oct 06</td><td class="sched__topic">Coding I<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://livecodebench.github.io/">LiveCodeBench</a> · <a href="https://evalplus.github.io/leaderboard.html">EvalPlus</a></td></tr>
+          <tr><td class="sched__date">Thu Oct 08</td><td class="sched__topic">Coding II<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://debugml.github.io/cheating-agents/">Cheating Agents</a> · <a href="https://www.anthropic.com/engineering/building-c-compiler">Parallel Claudes</a></td></tr>
+          <tr><td class="sched__wk" rowspan="2">06</td><td class="sched__date">Tue Oct 13</td><td class="sched__topic">Team Collaboration<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://code.claude.com/docs/en/worktrees">Claude Worktrees</a> · <a href="https://www.youtube.com/watch?v=TswQeKftnaw">AI Code Reviews</a></td></tr>
+          <tr><td class="sched__date">Thu Oct 15</td><td class="sched__topic">Coding<span class="sched__kind sched__kind--lab">Exercise</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+          <tr><td class="sched__wk" rowspan="2">07</td><td class="sched__date">Tue Oct 20</td><td class="sched__topic">Testing &amp; Verification<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+          <tr><td class="sched__date">Thu Oct 22</td><td class="sched__topic">Fuzzing<span class="sched__kind sched__kind--lab">Exercise</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://fuzzingbrain.github.io/">Fuzzing Brain</a></td></tr>
+          <tr><td class="sched__wk" rowspan="2">08</td><td class="sched__date">Tue Oct 27</td><td class="sched__topic">Security<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://genai.owasp.org/llm-top-10/">OWASP LLM Top-10</a></td></tr>
+          <tr><td class="sched__date">Thu Oct 29</td><td class="sched__topic">Prompt Injection<span class="sched__kind sched__kind--lab">Exercise</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://semgrep.dev/blog/2025/finding-vulnerabilities-in-modern-web-apps-using-claude-code-and-openai-codex/">Finding Vulns</a></td></tr>
+          <tr><td class="sched__wk" rowspan="2">09</td><td class="sched__date">Tue Nov 03</td><td class="sched__topic">Repair<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://www.swebench.com/">SWE-bench</a></td></tr>
+          <tr><td class="sched__date">Thu Nov 05</td><td class="sched__topic">Guest Speaker<span class="sched__kind sched__kind--guest">Guest Speaker</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+          <tr><td class="sched__wk" rowspan="2">10</td><td class="sched__date">Tue Nov 10</td><td class="sched__topic">AIOps<span class="sched__kind sched__kind--lec">Lecture</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="https://github.com/resources/articles/what-is-aiops">What is AIOps</a></td></tr>
+          <tr><td class="sched__date">Thu Nov 12</td><td class="sched__topic">Guest Speaker<span class="sched__kind sched__kind--guest">Guest Speaker</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+          <tr><td class="sched__wk" rowspan="2">11</td><td class="sched__date">Tue Nov 17</td><td class="sched__topic">Guest Speaker<span class="sched__kind sched__kind--guest">Guest Speaker</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+          <tr><td class="sched__date">Thu Nov 19</td><td class="sched__topic">Guest Speaker<span class="sched__kind sched__kind--guest">Guest Speaker</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+          <tr class="is-project"><td class="sched__wk" rowspan="2">12</td><td class="sched__date">Tue Nov 24</td><td class="sched__topic">Project Competition<span class="sched__kind sched__kind--ms">Project</span></td><td class="sched__slides">&mdash;</td><td class="sched__read"><a href="project.html">Leaderboard</a></td></tr>
+          <tr class="is-project"><td class="sched__date">Thu Nov 26</td><td class="sched__topic">Project Competition<span class="sched__kind sched__kind--ms">Project</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+          <tr class="is-project"><td class="sched__wk" rowspan="2">13</td><td class="sched__date">Tue Dec 01</td><td class="sched__topic">Project Presentation<span class="sched__kind sched__kind--ms">Project</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+          <tr class="is-project"><td class="sched__date">Thu Dec 03</td><td class="sched__topic">Project Presentation<span class="sched__kind sched__kind--ms">Project</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+          <tr class="is-project"><td class="sched__wk" rowspan="2">14</td><td class="sched__date">Tue Dec 08</td><td class="sched__topic">Project Presentation<span class="sched__kind sched__kind--ms">Project</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+          <tr class="is-project"><td class="sched__date">Thu Dec 10</td><td class="sched__topic">Project Demonstration<span class="sched__kind sched__kind--ms">Project</span></td><td class="sched__slides">&mdash;</td><td class="sched__read">&mdash;</td></tr>
+        </tbody>
+      </table>
     </div>
-    <p class="footer__mono">Dates run Tue/Thu from the first teaching week of Sep 7, 2026. Submission links are published on the course site; if a date conflicts, the course-site date controls.</p>
+    <p class="footer__mono">Submission links are published on the course site; if a date conflicts, the course-site date controls.</p>
   </div>
 </section>
 
-<!-- ===================== GRADING ===================== -->
-<section class="section" id="grading">
-  <div class="wrap">
-    <div class="section__head reveal">
-      <span class="tag">Grading metric</span>
-      <h2>Course Grading</h2>
-      <p>One team project, three assignments, and two quizzes. The capstone dominates the grade because it is where every skill in the course converges.</p>
-    </div>
-
-    <div class="grade__bars reveal">
-      <div class="gbar">
-        <div class="gbar__top"><span class="gbar__name">Team capstone project <small>full-stack build + peer audit + demo</small></span><span class="gbar__pct">60%</span></div>
-        <div class="gbar__track"><div class="gbar__fill" data-pct="60"></div></div>
-      </div>
-      <div class="gbar">
-        <div class="gbar__top"><span class="gbar__name">Assignments <small>3 graded homeworks</small></span><span class="gbar__pct">30%</span></div>
-        <div class="gbar__track"><div class="gbar__fill" data-pct="30"></div></div>
-      </div>
-      <div class="gbar">
-        <div class="gbar__top"><span class="gbar__name">Quizzes <small>2 in-term checks</small></span><span class="gbar__pct">10%</span></div>
-        <div class="gbar__track"><div class="gbar__fill" data-pct="10"></div></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="wrap footer__grid">
     <div>
-      <a class="brand" href="index.html"><img class="brand__mark" src="assets/school-logo.png" alt="School of Data Science" width="621" height="291" /><span><b>CSC4801</b><br><small>AI-assisted Software Engineering</small></span></a>
+      <a class="brand" href="index.html"><img class="brand__mark" src="assets/uni-logo.png" alt="The Chinese University of Hong Kong" width="96" height="76" /><span><b>CSC4801</b><br><small>AI-assisted Software Engineering</small></span></a>
       <p style="margin-top:16px">AI-assisted Software Engineering — building, specifying, and securing software with coding agents.</p>
       <p class="footer__mono">© <span data-year>2026</span> CSC4801 · Course website</p>
     </div>
     <nav class="footer__links" aria-label="Footer">
       <a href="index.html#staff">Staff</a>
       <a href="index.html#schedule">Schedule</a>
-      <a href="index.html#grading">Grading</a>
-      <a href="assignments.html">Assignments</a>
       <a href="project.html">Project</a>
     </nav>
   </div>
