@@ -296,8 +296,8 @@ code { color: #0A3069; }
 }
 
 /* ===================================================== ACKNOWLEDGEMENT = */
-/* Sponsor credit: compact enough to stay secondary to the leaderboard, but
-   structured as a distinct widget rather than a line of footer copy. */
+/* Course supporter credit: compact enough to stay secondary to the page
+   content, but structured as a distinct widget rather than footer copy. */
 .ack {
   margin-top: 44px; padding: 18px 20px;
   display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
@@ -305,6 +305,7 @@ code { color: #0A3069; }
   background: var(--canvas-sub); border: 1px solid var(--line);
   border-radius: var(--radius); box-shadow: var(--shadow);
 }
+.ack--standalone { margin-top: 0; }
 .ack__mark {
   width: 64px; height: 64px; display: grid; place-items: center;
   flex: none; border-radius: var(--radius);
