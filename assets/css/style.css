@@ -234,6 +234,8 @@ code { color: #0A3069; }
 .sched__slides { width: 130px; font-family: var(--f-mono); font-size: .78rem; color: var(--ink-faint); }
 .sched__read { font-size: .82rem; color: var(--ink-soft); }
 .sched__read a { color: var(--link); }
+.sched__read ul { margin: 0; padding-left: 1.1em; }
+.sched__read li + li { margin-top: 3px; }
 
 /* session kind, as a token type */
 .sched__kind {
