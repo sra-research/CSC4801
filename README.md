@@ -43,7 +43,8 @@ placeholder dash in the Slides column:
 
 Session kinds are badged with `sched__kind--lec` (lecture, blue),
 `--lab` (exercise, purple), `--guest` (guest speaker, green), and `--ms`
-(project, red). Project rows also carry `class="is-project"` on the `<tr>`,
+(project, red). The Assessments column lists quiz dates and assignment release
+dates. Project rows also carry `class="is-project"` on the `<tr>`,
 which draws a red left edge.
 
 ## Updating the leaderboard
@@ -87,6 +88,7 @@ redundant with a text label, and every text/background pair clears WCAG AA.
   published yet. Drop that rule from `.gitignore` when you are ready to commit
   them, then fill in the Slides column week by week.
 - **Calendar dates** — generated from a Tue/Thu meeting pattern starting the week
-  of Sep 7, 2026 (first class Sep 8, last Dec 10), with no holiday breaks
-  applied. The official course site is authoritative if a date differs.
+  of Sep 7, 2026 (first class Sep 8, last Dec 17), excluding CUHK-Shenzhen's
+  National Day recess (Oct 1–7). The official course site is authoritative if a
+  date differs.
 - **Location** — still `TBD`, flagged with a `.tpl` badge in the overview.
