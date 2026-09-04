@@ -43,7 +43,7 @@ placeholder dash in the Slides column:
 
 Session kinds are badged with `sched__kind--lec` (lecture, blue),
 `--lab` (exercise, purple), `--guest` (guest speaker, green), and `--ms`
-(project, red). The Assessments column lists quiz dates and assignment release
+(project, red). The Assessments column lists quiz dates and HW release
 dates. Project rows also carry `class="is-project"` on the `<tr>`,
 which draws a red left edge.
 
