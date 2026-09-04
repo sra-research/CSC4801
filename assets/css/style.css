@@ -237,20 +237,6 @@ code { color: #0A3069; }
 .sched__read ul { margin: 0; padding-left: 1.1em; }
 .sched__read li + li { margin-top: 3px; }
 
-/* session kind, as a token type */
-.sched__kind {
-  display: inline-block; margin-left: 8px; vertical-align: 1px;
-  font-family: var(--f-mono); font-size: .58rem; font-weight: 500;
-  text-transform: uppercase; letter-spacing: .08em;
-  border: 1px solid var(--line); border-radius: 20px; padding: 1px 7px;
-  color: var(--ink-faint);
-}
-.sched__kind--lec   { color: var(--syn-num); background: var(--tint-num); border-color: #DAE5F0; }
-.sched__kind--lab   { color: var(--syn-fn);  background: var(--tint-fn);  border-color: #E2DCF0; }
-.sched__kind--guest { color: var(--syn-tag); background: var(--tint-tag); border-color: #DCE8E0; }
-.sched__kind--quiz  { color: var(--syn-var); background: var(--tint-var); border-color: #ECDCCF; }
-.sched__kind--ms    { color: var(--syn-key); background: var(--tint-key); border-color: #EFDCDA; font-weight: 700; }
-
 /* project weeks: a red left edge on the first cell of the row */
 .sched tr.is-project .sched__date { box-shadow: inset 3px 0 0 var(--syn-key); }
 
