@@ -6,8 +6,6 @@ assets/slides/
 # Original, unprocessed logo artwork (the derived PNGs in assets/ are committed)
 assets/source/
 
-# Reference material, not part of the published site
-*.pdf
 
 # OS / editor noise
 .DS_Store
