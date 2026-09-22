@@ -48,7 +48,7 @@ which draws a red left edge.
 ## Updating the leaderboard
 
 `project.html` holds eight placeholder rows. Replace each `lb__empty` cell with
-real cells for team, members, score, and notes; add or delete rows freely. The
+real cells for team, score, and notes; add or delete rows freely. The
 top three ranks automatically take a coloured left edge.
 
 ## Design
